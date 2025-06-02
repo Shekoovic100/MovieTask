@@ -11,7 +11,12 @@ import SwiftUI
 struct MovieTaskApp: App {
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            let movieService = MovieServicesImplement()
+            let movieRepository = MovieRepository(movieService: movieService)
+            let getMoviesUseCase = GetMoviesUseCase(repository: movieRepository)
+            let viewModel = ViewModel(getMoviesUseCase: getMoviesUseCase)
+            HomeView()
+                .environmentObject(viewModel)
         }
     }
 }

@@ -7,7 +7,7 @@
 
 import Foundation
 
-final class APIClient: NetworkingManagerProtocol {
+final class APIClient: NetworkServiceProtocol {
     
     let session: URLSession
     
