@@ -16,10 +16,10 @@ import Foundation
     private let imageBaseUrl = "https://image.tmdb.org/t/p/w500"
     private let iMDBBaseURl = "https://www.imdb.com/title/"
     private let imdbActorURL = "https://www.imdb.com/name/"
-    private var currentPage = 1
-    private var totalPages = 1
+    var currentPage = 1
+    var totalPages = 1
     
-    init(getMoviesUseCase: GetMoviesUseCase) {
+    init(getMoviesUseCase: GetMoviesUseCaseProtocol) {
         self.moviesUseCase = getMoviesUseCase
     }
     
