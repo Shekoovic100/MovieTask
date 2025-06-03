@@ -8,18 +8,16 @@
 import Foundation
 
 
-protocol MovieService {
+class MovieService {
+
+    private let netwrokService: NetworkServiceProtocol
     
-    func fetchUpComingMovies(page: Int) async throws -> UpComingModel
-}
-
-
-class MovieServicesImplement: MovieService {
-
-    private let apiClient = APIClient()
+    init(service: NetworkServiceProtocol){
+        self.netwrokService = service
+    }
 
     func fetchUpComingMovies(page: Int) async throws -> UpComingModel {
-        let data = try await apiClient.request(urlString: .upComingMovies(page), method: .get, type: UpComingModel.self)
+        let data = try await netwrokService.request(urlString: .upComingMovies(page), method: .get, type: UpComingModel.self)
         return data
     }
 }

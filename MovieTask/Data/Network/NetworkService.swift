@@ -12,12 +12,11 @@ public enum HTTPMethod: String {
 }
 
 protocol NetworkServiceProtocol {
-    var  session: URLSession { get }
     func request<T: Codable>(urlString: Route, method: HTTPMethod,type: T.Type) async throws -> T
 }
 
 
-extension NetworkServiceProtocol {
+class NetworkService: NetworkServiceProtocol{
     
     
     func request<T: Codable>(urlString: Route, method: HTTPMethod,type: T.Type) async throws -> T {
@@ -30,7 +29,7 @@ extension NetworkServiceProtocol {
         var request = URLRequest(url: url)
         request.httpMethod = method.rawValue
         
-        let (data , response) = try await session.data(for: request)
+        let (data , response) = try await URLSession.shared.data(for: request)
         
         guard let response = response as? HTTPURLResponse else {
             throw APIError.requestFailed(description: "Inavild Response")

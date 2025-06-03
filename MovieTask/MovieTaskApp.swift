@@ -11,7 +11,7 @@ import SwiftUI
 struct MovieTaskApp: App {
     var body: some Scene {
         WindowGroup {
-            let movieService = MovieServicesImplement()
+            let movieService = MovieService(service: NetworkService())
             let movieRepository = MovieRepository(movieService: movieService)
             let getMoviesUseCase = GetMoviesUseCase(repository: movieRepository)
             let viewModel = ViewModel(getMoviesUseCase: getMoviesUseCase)

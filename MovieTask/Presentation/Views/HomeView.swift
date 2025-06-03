@@ -21,12 +21,14 @@ struct HomeView: View {
             ScrollView(.vertical) {
                 LazyVGrid(columns: adptiveFixedColumns,pinnedViews: .sectionHeaders) {
                     ForEach(Array(viewModel.upComingList.enumerated()),id: \.offset) { index,movie in
-                        UpComingCellRow(movie: movie)
-                            .onAppear {
-                                if movie.id == viewModel.upComingList.last?.id {
-                                    viewModel.loadData()
+                        NavigationLink(destination: MovieDetailsView(movie: movie)) {
+                            UpComingCellRow(movie: movie)
+                                .onAppear {
+                                    if movie.id == viewModel.upComingList.last?.id {
+                                        viewModel.loadData()
+                                    }
                                 }
-                            }
+                        }
                     }
                 }
                 .navigationTitle("Discover")
@@ -43,7 +45,7 @@ struct HomeView: View {
 }
 
 #Preview {
-    let movieService = MovieServicesImplement()
+    let movieService = MovieService(service: NetworkService())
     let movieRepository = MovieRepository(movieService: movieService)
     let getMoviesUseCase = GetMoviesUseCase(repository: movieRepository)
     let viewModel = ViewModel(getMoviesUseCase: getMoviesUseCase)
