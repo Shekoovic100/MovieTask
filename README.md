@@ -6,7 +6,7 @@ a simple iOS application that displays a list of movies fetched from TMDB movie 
 
 ### Movie Listing:
 
-- Design Build with Swift UI.
+- Design Build with SwiftUI.
 - Fetches Movies from the TMDB API.
 - Displays Movies in a paginated way.
 
