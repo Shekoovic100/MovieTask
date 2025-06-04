@@ -11,7 +11,7 @@ enum Route {
     
     static let BaseURL = "https://api.themoviedb.org/3/"
     private var getAPIKey: String {
-         let apiKey = ""
+         let apiKey = "a5f1b980a72b26fba552d7fdb96a1390"
         return apiKey
     }
     case upComingMovies(Int)
