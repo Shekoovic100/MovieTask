@@ -30,7 +30,7 @@ a simple iOS application that displays a list of movies fetched from TMDB movie 
 ## Screenshots     
 
 <img src="https://github.com/user-attachments/assets/7c4862e7-1bd3-4399-b850-b42358f131b6" alt="Home Screen" width="180"/>
-<img src="https://github.com/user-attachments/assets/8dbc7231-05cc-4c33-9164-5f7cf2970bbf" alt="Home Screen" width="180"/>
+<img src="https://github.com/user-attachments/assets/acae9ffe-9955-4678-823c-8cd0c53b6beb" alt="Home Screen" width="180"/>
 
 
 
