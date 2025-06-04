@@ -20,7 +20,7 @@ a simple iOS application that displays a list of movies fetched from TMDB movie 
 
 ### Error Handling:
 
-- Handles API errors (e.g., no internet, invalid URL, decoding issues) with user-friendly alerts.
+- Handles API errors (e.g., no internet, invalid URL, decoding issues).
 
 
 ### Testing:
