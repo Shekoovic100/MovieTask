@@ -22,6 +22,9 @@ a simple iOS application that displays a list of movies fetched from TMDB movie 
 
 - Handles API errors (e.g., no internet, invalid URL, decoding issues).
 
+### Caching:
+
+- caching using On first launch, fetch data from API and cache it.
 
 ### Testing:
 
