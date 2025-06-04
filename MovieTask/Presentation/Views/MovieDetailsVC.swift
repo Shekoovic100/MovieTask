@@ -85,12 +85,10 @@ class MovieDetailsVC: UIViewController {
             
         
             
-            movieImageView.topAnchor.constraint(equalTo: titleLabel.bottomAnchor,constant: 20),
+            movieImageView.topAnchor.constraint(equalTo: titleLabel.bottomAnchor, constant: 20),
             movieImageView.centerXAnchor.constraint(equalTo: contentView.centerXAnchor),
-            movieImageView.leadingAnchor.constraint(equalTo: titleLabel.leadingAnchor),
-            movieImageView.trailingAnchor.constraint(equalTo: titleLabel.trailingAnchor),
             movieImageView.heightAnchor.constraint(equalToConstant: 400),
-            movieImageView.widthAnchor.constraint(equalToConstant:  200),
+            movieImageView.widthAnchor.constraint(equalTo: contentView.widthAnchor , multiplier: 0.7),
             
             descriptionLabel.topAnchor.constraint(equalTo: movieImageView.bottomAnchor, constant: 16),
             descriptionLabel.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 16),
